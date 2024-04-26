@@ -1,0 +1,16 @@
+name: diff
+on: 
+  pull_request
+
+jobs:
+  get-diff:
+      runs-on: ubuntu-latest
+      name: Get Diff
+      steps:
+        - name: Checkout
+          id: checkout
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 2
+        - name: git diff
+          run: git diff ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
