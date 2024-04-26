@@ -3,7 +3,7 @@ name: PR copilot
 on: [push]
 
 jobs:
-  hello_world_job:
+  pr-copilot:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
@@ -13,7 +13,7 @@ jobs:
     
       - name: Test Local Action
         id: test-action
-        uses: mackowski/GH-Copilot@v1 
+        uses: mackowski/GH-Copilot@v1.0.1
         with:
           milliseconds: 1000
     
