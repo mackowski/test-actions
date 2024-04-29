@@ -15,4 +15,4 @@ jobs:
         - name: git diff
           run: echo "DIFF=$(git diff ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} | base64)" >> "$GITHUB_ENV"
         - name: use diff
-          run: echo "${{ steps.tests.outputs.stdout }} $DIFF ${{DIFF}}"
+          run: echo "${{ steps.tests.outputs.stdout }} ${{DIFF}}"
