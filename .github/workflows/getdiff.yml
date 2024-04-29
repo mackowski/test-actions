@@ -20,4 +20,6 @@ jobs:
             echo "END_OF_DIFF" >> ${GITHUB_ENV}
             echo 'aa'
         - name: use diff
-          run: echo 'aaa'
+          run: | 
+            echo 'aaa'
+            echo $DIFF
