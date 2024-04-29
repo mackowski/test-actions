@@ -15,7 +15,7 @@ jobs:
         - name: git diff
           run: | 
             echo 'start'
-            echo "DIFF=$(git diff ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} | base64)"
+            echo "DIFF=$(git diff ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} END_OF_DIFF| base64)"
             echo 'aa'
         - name: use diff
           run: echo 'aaa'
