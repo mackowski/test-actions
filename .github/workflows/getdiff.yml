@@ -17,7 +17,7 @@ jobs:
             echo "DIFF<<END_OF_DIFF" >> ${GITHUB_ENV}
             echo "DIFF=$(git diff ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }})" >> ${GITHUB_ENV}
             echo "END_OF_DIFF" >> ${GITHUB_ENV}
+            echo $DIFF
         - name: use diff
           run: | 
             echo $DIFF
-            echo $DIFF | base64 --decode
