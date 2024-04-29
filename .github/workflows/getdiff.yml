@@ -36,3 +36,15 @@ jobs:
          with:
            name: diff
            path: diff.txt
+  use-diff:
+    runs-on: ubuntu-latest
+    needs: store-diff
+    name: use diff
+    steps:
+    - name: Download diff from store-diff
+      uses: actions/download-artifact@v4
+      with:
+        name: diff
+    - shell: bash
+      run: cat ./diff.txt
+    
