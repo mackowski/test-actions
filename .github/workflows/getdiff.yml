@@ -13,6 +13,9 @@ jobs:
           with:
             fetch-depth: 2
         - name: git diff
-          run: echo "DIFF=$(git diff ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} | base64)" >> $GITHUB_ENV
+          run: | 
+            echo 'start'
+            echo "DIFF=$(git diff ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} | base64)"
+            echo 'aa'
         - name: use diff
           run: echo 'aaa'
